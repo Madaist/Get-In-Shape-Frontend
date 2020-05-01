@@ -17,12 +17,12 @@
       <div class="container">
       
         <div class="row pl-5">
-          <ng-container *ngFor=" let album of albums | searchFilter: { artistName: searchText, name: searchText, songName: searchText }; let ind = index">
-            <div class="view col mb-3 mr-3 p-0 hoverable" (click)="showDM(album.id)">
-              <img [src]="album.img" class="img-fluid z-depth-1 rounded" alt="hoverable"/>
+          <ng-container *ngFor=" let fitnessClass of fitnessClasses | searchFilter: { instructorName: searchText, gymClubName: searchText, name: searchText, songName: searchText }; let ind = index">
+            <div class="view col mb-3 mr-3 p-0 hoverable" (click)="showDM(fitnessClass.id)">
+              <img [src]="fitnessClass.img" class="img-fluid z-depth-1 rounded" alt="hoverable"/>
 
               <div class="detail">
-                <p id="p1">{{ album.artistName.toString() }} - {{ album.name }}</p>
+                <p id="p1">{{ fitnessClass.name}} </p>
                
                 
               </div>

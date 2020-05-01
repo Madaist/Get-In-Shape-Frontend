@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Album } from '../shared/album.model';
+import { FitnessClass } from '../shared/fitnessClass.model';
 import { ApiService } from '../shared/api.service';
 import { DetailModalComponent } from './detail-modal/detail-modal.component';
 
@@ -9,7 +9,7 @@ import { DetailModalComponent } from './detail-modal/detail-modal.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  albums: Album[] = [];
+  fitnessClasses: FitnessClass[] = [];
   searchText: string;
   title: string;
 
@@ -19,16 +19,16 @@ export class HomeComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.api.getAlbums().subscribe((data: Album[]) => {
+    this.api.getFitnessClasses().subscribe((data: FitnessClass[]) => {
 
       for (let i = 0; i < data.length; i++) {
-        this.api.getAlbum(data[i].id).subscribe((info: Album) => {
+        this.api.getFitnessClass(data[i].id).subscribe((info: FitnessClass) => {
           info.id = data[i].id;
           if (!info.img) {
-           info.img = 'https://i.ibb.co/JKjjDtx/vinyl-record-mid.jpg';
+           info.img = 'https://i.ibb.co/T2yxkkk/doodle.jpg';
           }
         
-          this.albums.push(info);
+          this.fitnessClasses.push(info);
         },
           (e: Error) => {
             console.log('err', e);

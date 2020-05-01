@@ -12,18 +12,20 @@ export class ApiService {
   header = new HttpHeaders({
     'Content-Type': 'application/json'
   });
-  baseUrl = 'https://localhost:44344/api';
+  baseUrl = 'https://localhost:44320/api';
  
-  getAlbum(id: number) {
-    return this.http.get(this.baseUrl + '/album/' + id.toString(), { headers: this.header });
+  getFitnessClass(id: number) {
+    return this.http.get(this.baseUrl + '/fitnessClass/' + id.toString(), { headers: this.header });
   }
 
-  getAlbums() {
-    return this.http.get(this.baseUrl + '/album', { headers: this.header });
+  getFitnessClasses() {
+    return this.http.get(this.baseUrl + '/fitnessClass', { headers: this.header });
   }
 
+  /*
   getStudio(id: number) {
     return this.http.get(this.baseUrl + '/studio/' + id.toString(), { headers: this.header });
   }
+  */
 }
 

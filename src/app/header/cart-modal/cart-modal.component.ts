@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Album } from 'src/app/shared/album.model';
+import { FitnessClass } from 'src/app/shared/fitnessClass.model';
 import { CartService } from 'src/app/shared/cart.service';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
@@ -10,7 +10,7 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 })
 export class CartModalComponent implements OnInit {
   @ViewChild('cartModal') modal: ModalDirective;
-  products: Album[] = [];
+  products: FitnessClass[] = [];
 
 
   constructor(private cartService: CartService) { }

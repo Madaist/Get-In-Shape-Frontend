@@ -1,12 +1,13 @@
-export class Album {
+export class FitnessClass {
   id: number;
   name: string;
-  releaseYear: number;
-  studioId: number;
-  artistName: string[];
+  timeSchedule: Date;
+  instructorName: string[];
+  instructorId: number[];
   songName: string[];
   songId: number[];
-  artistId: number[];
+  gymClubName: string[];
+  gymClubId: number[];
   img: string;
 
   constructor(input?: any) {

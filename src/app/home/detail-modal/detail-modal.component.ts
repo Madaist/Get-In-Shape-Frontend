@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
-import { Album } from '../../shared/album.model';
+import { FitnessClass } from '../../shared/fitnessClass.model';
 import { ApiService } from '../../shared/api.service';
 import { CartService } from '../../shared/cart.service';
 
@@ -11,7 +11,7 @@ import { CartService } from '../../shared/cart.service';
 })
 export class DetailModalComponent implements OnInit {
   @ViewChild('detailModal') modal: ModalDirective;
-  album = new Album();
+  fitnessClass = new FitnessClass();
   studio: string;
  
 
@@ -20,30 +20,19 @@ export class DetailModalComponent implements OnInit {
   ngOnInit() {}
 
   initialize(id: number): void { // initializeaza un modal dupa un id
-    this.getAlbum(id);
+    this.getFitnessClass(id);
     this.modal.show(); //patratelul pt fiecare album
   }
 
-  getStudio(id: number) {
-    this.api.getStudio(id)
-      .subscribe((data: Album) => { //am luat albumul
-        this.studio = data.name;
-      },
-        (err: Error) => {
-          console.log('err', err);
 
-        });
-  }
-
-  getAlbum(id: number) {
-    this.api.getAlbum(id)
-      .subscribe((data: Album) => {
-        this.album = data; 
-        this.album.id = id;
+  getFitnessClass(id: number) {
+    this.api.getFitnessClass(id)
+      .subscribe((data: FitnessClass) => {
+        this.fitnessClass = data; 
+        this.fitnessClass.id = id;
         if (!data.img) {
-          this.album.img = 'https://i.ibb.co/0cBJC3N/3.jpg';
+          this.fitnessClass.img = 'https://i.ibb.co/0cBJC3N/3.jpg';
         }
-        this.getStudio(this.album.studioId); //apeleaza metoda de mai sus pt a lua studioul albumului
       },
         (err: Error) => {
           console.log('err', err);
@@ -51,8 +40,8 @@ export class DetailModalComponent implements OnInit {
         });
   }
 
-  addToCart(album: Album) {
-    this.cart.add(album);
+  addToCart(fitnessClass: FitnessClass) {
+    this.cart.add(fitnessClass);
     this.modal.hide();
   }
 }

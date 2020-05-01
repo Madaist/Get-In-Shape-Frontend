@@ -2,7 +2,14 @@
   border-bottom: 4px solid #606060;
   border-radius: 10px;
   background-color: white !important;
+ 
 }
+/*
+#searchbar{
+  background-image: url("https://i.ibb.co/YjDfrwy/fundal.jpg");
+}
+*/
+
 
 .navbar {
   box-shadow: none;
