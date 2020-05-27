@@ -1,0 +1,21 @@
+<div bsModal class=" row modal fade" #editInstructorModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="editInstructorModal"
+     aria-hidden="true" (onHide)=" this.editInstructorForm.reset();">
+  <div class="col-md-6 col-sm-6 col-lg-4 mx-auto my-4" *ngIf="editInstructorForm">
+
+    <form class="text-center border border-light p-5 " 
+    [formGroup]="editInstructorForm"  >
+
+      <p class="h4 mb-4">Edit Instructor</p>
+      <input type="text"  class="form-control mb-4"  formControlName="lastName" placeholder="Enter last name" autocomplete="off">
+      <input type="text"  class="form-control mb-4"  formControlName="firstName" placeholder="Enter first name" autocomplete="off">
+      <label for="song">Add specialization id's *</label>
+      <input type="text" id="song" class="form-control mb-4" placeholder='SpecializationId1, SpecializationId2' formControlName="specializationId" autocomplete="off" >
+      
+      <button mdbBtn color="secondary" block="true" class="my-4"  [disabled]="editInstructorForm.invalid || editInstructorForm.pristine" (click)="editInstructor()">Edit</button>
+
+    </form>
+
+  </div>
+</div>
+
+

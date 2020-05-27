@@ -15,7 +15,13 @@ import { HeaderComponent } from './header/header.component';
 import { DetailModalComponent } from './home/detail-modal/detail-modal.component';
 import { SearchPipe } from './shared/search.pipe';
 import { CartModalComponent } from './header/cart-modal/cart-modal.component';
+import { AddComponent } from './add/add.component';
 
+import { EditComponent } from './edit/edit.component';
+import { EditFitnessClassModalComponent } from './edit/edit-fitnessClass-modal/edit-fitnessClass-modal.component';
+import { EditSongModalComponent } from './edit/edit-song-modal/edit-song-modal.component';
+import { EditInstructorModalComponent } from './edit/edit-instructor-modal/edit-instructor-modal.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -26,9 +32,14 @@ import { CartModalComponent } from './header/cart-modal/cart-modal.component';
     HeaderComponent,
     SearchPipe,
     DetailModalComponent,  
-    CartModalComponent
-
-
+    CartModalComponent,
+    AddComponent,
+    EditComponent,
+    EditFitnessClassModalComponent,
+    EditSongModalComponent,
+    EditInstructorModalComponent,
+    ContactComponent,  
+    
   ],
   imports: [
     CommonModule,

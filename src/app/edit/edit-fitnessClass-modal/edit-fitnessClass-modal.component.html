@@ -1,0 +1,40 @@
+<div bsModal class=" row modal fade" #editFitnessClassModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="editFitnessClassModal"
+     aria-hidden="true" (onHide)=" this.editFitnessClassForm.reset();">
+  <div class="col-md-6 col-sm-6 col-lg-4 mx-auto my-4" *ngIf="editFitnessClassForm">
+
+
+    <form class="text-center border border-light p-5" [formGroup]="editFitnessClassForm">
+
+      <p class="h4 mb-4">Edit FitnessClass</p>
+
+      <label for="name">Name</label>
+      <input type="text"  id="name" class="form-control mb-4"   formControlName="name" autocomplete="off" >
+
+      <label for="art">Add instructor id's *</label>
+      <input type="text" id="art" class="form-control mb-4" placeholder='InstructorId1, InstructorId2' formControlName="instructorId" autocomplete="off" >
+
+      <label for="song">Add songs id's *</label>
+      <input type="text" id="song" class="form-control mb-4" placeholder='SongId1, SongId2' formControlName="songId" autocomplete="off" >
+
+      <label for="gymClub">Add gymClub id's *</label>
+      <input type="text" id="song" class="form-control mb-4" placeholder='GymClubId1, GymClubId2' formControlName="gymClubId" autocomplete="off" >
+
+      <label for="song">Img URL</label>
+      <input type="text" id="song" class="form-control novalidate mb-4"  formControlName="img" autocomplete="off" >
+
+
+
+      <button mdbBtn color="secondary" block="true" class="my-4"  [disabled]="!this.editFitnessClassForm.valid || this.editFitnessClassForm.pristine" (click)='editFitnessClass()'>Edit</button>
+
+
+
+
+
+
+
+    </form>
+
+  </div>
+</div>
+
+

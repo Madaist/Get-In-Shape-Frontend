@@ -72,14 +72,12 @@ span {
 #fitnessClass{
   font-family: "Caveat";
   font-size: 35px;
-  font-weight: bold;
+  font-weight: 1000;
 
 }
 
 .marcatori{
- font-size: 13px;
- position: fixed;
- padding-top: 0px;
- 
- 
+  font-size: 13px;
+  position: fixed;
+  padding-top: 0px;
 }
